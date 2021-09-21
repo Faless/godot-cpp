@@ -163,8 +163,14 @@ public:                                                                         
                                                                                                                                                                   \
 	static m_class *_new() {                                                                                                                                      \
 		static GDNativeClassConstructor ___constructor = godot::internal::interface->classdb_get_constructor(#m_class);                                           \
+		static GDNativeExtensionPtr ___extension = godot::internal::interface->classdb_get_extension(#m_class);                                                   \
 		CHECK_CLASS_CONSTRUCTOR(___constructor, m_class);                                                                                                         \
-		GDNativeObjectPtr obj = ___constructor();                                                                                                                 \
+		GDNativeObjectPtr obj = nullptr;                                                                                                                          \
+		if (___extension) {                                                                                                                                       \
+			obj = godot::internal::interface->classdb_construct_extended(___constructor, ___extension);                                                           \
+		} else {                                                                                                                                                  \
+			obj = ___constructor();                                                                                                                               \
+		}                                                                                                                                                         \
 		return reinterpret_cast<m_class *>(godot::internal::interface->object_get_instance_binding(obj, godot::internal::token, &m_class::___binding_callbacks)); \
 	}                                                                                                                                                             \
                                                                                                                                                                   \
