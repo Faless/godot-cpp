@@ -162,9 +162,10 @@ public:                                                                         
 	};                                                                                                                                                            \
                                                                                                                                                                   \
 	static m_class *_new() {                                                                                                                                      \
-		static GDNativeClassConstructor ___constructor = godot::internal::interface->classdb_get_constructor(#m_class);                                           \
+		static GDNativeExtensionPtr ___extension = nullptr;                                                                                                       \
+		static GDNativeClassConstructor ___constructor = godot::internal::interface->classdb_get_constructor(#m_class, &___extension);                            \
 		CHECK_CLASS_CONSTRUCTOR(___constructor, m_class);                                                                                                         \
-		GDNativeObjectPtr obj = ___constructor();                                                                                                                 \
+		GDNativeObjectPtr obj = godot::internal::interface->classdb_construct_object(___constructor, ___extension);                                               \
 		return reinterpret_cast<m_class *>(godot::internal::interface->object_get_instance_binding(obj, godot::internal::token, &m_class::___binding_callbacks)); \
 	}                                                                                                                                                             \
                                                                                                                                                                   \
@@ -205,7 +206,7 @@ public:                                                                         
 		___binding_reference_callback,                                                                                                                            \
 	};                                                                                                                                                            \
 	static m_class *_new() {                                                                                                                                      \
-		static GDNativeClassConstructor ___constructor = godot::internal::interface->classdb_get_constructor(#m_class);                                           \
+		static GDNativeClassConstructor ___constructor = godot::internal::interface->classdb_get_constructor(#m_class, nullptr);                                  \
 		CHECK_CLASS_CONSTRUCTOR(___constructor, m_class);                                                                                                         \
 		GDNativeObjectPtr obj = ___constructor();                                                                                                                 \
 		return reinterpret_cast<m_class *>(godot::internal::interface->object_get_instance_binding(obj, godot::internal::token, &m_class::___binding_callbacks)); \
