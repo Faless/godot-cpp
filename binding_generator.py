@@ -230,6 +230,7 @@ def generate_builtin_class_header(builtin_api, size, used_classes, fully_used_cl
     result.append("namespace godot {")
     result.append("")
 
+    result.append(f"class Variant;")
     for type_name in used_classes:
         result.append(f"class {type_name};")
 
