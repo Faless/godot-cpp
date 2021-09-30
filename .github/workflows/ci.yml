@@ -84,7 +84,7 @@ jobs:
 
       - name: Build test
         run: |
-          scons -C test platform=${{ matrix.platform }} target=release ${{ matrix.flags }} -j2
+          scons platform=${{ matrix.platform }} target=release ${{ matrix.flags }} -j2 build_projects=test
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
