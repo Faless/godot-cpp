@@ -150,13 +150,6 @@ opts.Add("build_projects", "List of projects to build (comma-separated list of p
 opts.Update(env)
 Help(opts.GenerateHelpText(env))
 
-# Require C++17
-if host_platform == "windows" and env["platform"] == "windows" and not env["use_mingw"]:
-    # MSVC
-    env.Append(CCFLAGS=["/std:c++17"])
-else:
-    env.Append(CCFLAGS=["-std=c++17"])
-
 # This makes sure to keep the session environment variables on Windows.
 # This way, you can run SCons in a Visual Studio 2017 prompt and it will find
 # all the required tools
@@ -167,6 +160,13 @@ if host_platform == "windows" and env["platform"] != "android":
         env = Environment(TARGET_ARCH="x86")
 
     opts.Update(env)
+
+# Require C++17
+if host_platform == "windows" and env["platform"] == "windows" and not env["use_mingw"]:
+    # MSVC
+    env.Append(CCFLAGS=["/std:c++17"])
+else:
+    env.Append(CCFLAGS=["-std=c++17"])
 
 if env["target"] == "debug":
     env.Append(CPPDEFINES=["DEBUG_ENABLED", "DEBUG_METHODS_ENABLED"])
@@ -485,11 +485,13 @@ if env["build_library"]:
     Default(library)
 
 if env["build_projects"]:
-    env = env.Clone()
-    env["SHLIBSUFFIX"] = "{}.{}.{}{}".format(env["platform"], env["target"], arch_suffix, env["SHLIBSUFFIX"])
-    Export("env")
-    env.Append(CPPPATH=["#gen/include", "#include", "#godot-headers"])
-    env.Append(LIBPATH=["#bin"])
-    env.Append(LIBS=library_name)
+    base_env = env.Clone()
     for v in env["build_projects"].split(","):
+        env = base_env.Clone()
+        env["SHLIBSUFFIX"] = "{}.{}.{}{}".format(env["platform"], env["target"], arch_suffix, env["SHLIBSUFFIX"])
+        Export("env")
+        env.Append(CPPPATH=["#gen/include", "#include", "#godot-headers"])
+        env.Append(LIBPATH=["#bin"])
+        env.Append(LIBS=library_name)
+
         SConscript(os.path.join(v, "SConstruct"))
