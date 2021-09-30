@@ -485,7 +485,7 @@ if env["build_library"]:
     Default(library)
 
 if env["build_projects"]:
-    if platform == "windows" and env["use_mingw"]:
+    if env["platform"] == "windows" and env["use_mingw"]:
         library_name = library_name[3:]  # Remove "lib" prefix
 
     base_env = env.Clone()
