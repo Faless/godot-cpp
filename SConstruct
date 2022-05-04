@@ -153,7 +153,7 @@ if host_platform == "windows" and (get_cmdline_bool("use_mingw", False) or selec
     if selected_platform == "windows":
         env = Environment(ENV=os.environ, tools=["mingw"])
     else:
-        # Mostly generic Posix.
+        # Generic Posix.
         env = Environment(ENV=os.environ, tools=["cc", "c++", "ar", "link", "textfile", "zip"])
 
     # Long line hack. Use custom spawn, quick AR append (to avoid files with the same names to override each other).
@@ -222,17 +222,6 @@ if unknown:
     print("WARNING: Unknown SCons variables were passed and will be ignored:")
     for item in unknown.items():
         print("    " + item[0] + "=" + item[1])
-
-# This makes sure to keep the session environment variables on Windows.
-# This way, you can run SCons in a Visual Studio 2017 prompt and it will find
-# all the required tools
-if host_platform == "windows" and env["platform"] != "android":
-    if env["bits"] == "64":
-        env = Environment(TARGET_ARCH="amd64")
-    elif env["bits"] == "32":
-        env = Environment(TARGET_ARCH="x86")
-
-    opts.Update(env)
 
 # Require C++17
 if env["platform"] == "windows" and is_msvc(env):
