@@ -2608,7 +2608,7 @@
 				},
 				{
 					"name": "KEY_MASK_CMD",
-					"value": 134217728
+					"value": 268435456
 				},
 				{
 					"name": "KEY_MASK_KPAD",
@@ -3137,156 +3137,160 @@
 					"value": 5
 				},
 				{
-					"name": "PROPERTY_HINT_KEY_ACCEL",
+					"name": "PROPERTY_HINT_LINK",
 					"value": 6
 				},
 				{
-					"name": "PROPERTY_HINT_FLAGS",
+					"name": "PROPERTY_HINT_KEY_ACCEL",
 					"value": 7
 				},
 				{
-					"name": "PROPERTY_HINT_LAYERS_2D_RENDER",
+					"name": "PROPERTY_HINT_FLAGS",
 					"value": 8
 				},
 				{
-					"name": "PROPERTY_HINT_LAYERS_2D_PHYSICS",
+					"name": "PROPERTY_HINT_LAYERS_2D_RENDER",
 					"value": 9
 				},
 				{
-					"name": "PROPERTY_HINT_LAYERS_2D_NAVIGATION",
+					"name": "PROPERTY_HINT_LAYERS_2D_PHYSICS",
 					"value": 10
 				},
 				{
-					"name": "PROPERTY_HINT_LAYERS_3D_RENDER",
+					"name": "PROPERTY_HINT_LAYERS_2D_NAVIGATION",
 					"value": 11
 				},
 				{
-					"name": "PROPERTY_HINT_LAYERS_3D_PHYSICS",
+					"name": "PROPERTY_HINT_LAYERS_3D_RENDER",
 					"value": 12
 				},
 				{
-					"name": "PROPERTY_HINT_LAYERS_3D_NAVIGATION",
+					"name": "PROPERTY_HINT_LAYERS_3D_PHYSICS",
 					"value": 13
 				},
 				{
-					"name": "PROPERTY_HINT_FILE",
+					"name": "PROPERTY_HINT_LAYERS_3D_NAVIGATION",
 					"value": 14
 				},
 				{
-					"name": "PROPERTY_HINT_DIR",
+					"name": "PROPERTY_HINT_FILE",
 					"value": 15
 				},
 				{
-					"name": "PROPERTY_HINT_GLOBAL_FILE",
+					"name": "PROPERTY_HINT_DIR",
 					"value": 16
 				},
 				{
-					"name": "PROPERTY_HINT_GLOBAL_DIR",
+					"name": "PROPERTY_HINT_GLOBAL_FILE",
 					"value": 17
 				},
 				{
-					"name": "PROPERTY_HINT_RESOURCE_TYPE",
+					"name": "PROPERTY_HINT_GLOBAL_DIR",
 					"value": 18
 				},
 				{
-					"name": "PROPERTY_HINT_MULTILINE_TEXT",
+					"name": "PROPERTY_HINT_RESOURCE_TYPE",
 					"value": 19
 				},
 				{
-					"name": "PROPERTY_HINT_PLACEHOLDER_TEXT",
+					"name": "PROPERTY_HINT_MULTILINE_TEXT",
 					"value": 20
 				},
 				{
-					"name": "PROPERTY_HINT_COLOR_NO_ALPHA",
+					"name": "PROPERTY_HINT_PLACEHOLDER_TEXT",
 					"value": 21
 				},
 				{
-					"name": "PROPERTY_HINT_IMAGE_COMPRESS_LOSSY",
+					"name": "PROPERTY_HINT_COLOR_NO_ALPHA",
 					"value": 22
 				},
 				{
-					"name": "PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS",
+					"name": "PROPERTY_HINT_IMAGE_COMPRESS_LOSSY",
 					"value": 23
 				},
 				{
-					"name": "PROPERTY_HINT_OBJECT_ID",
+					"name": "PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS",
 					"value": 24
 				},
 				{
-					"name": "PROPERTY_HINT_TYPE_STRING",
+					"name": "PROPERTY_HINT_OBJECT_ID",
 					"value": 25
 				},
 				{
-					"name": "PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE",
+					"name": "PROPERTY_HINT_TYPE_STRING",
 					"value": 26
 				},
 				{
-					"name": "PROPERTY_HINT_METHOD_OF_VARIANT_TYPE",
+					"name": "PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE",
 					"value": 27
 				},
 				{
-					"name": "PROPERTY_HINT_METHOD_OF_BASE_TYPE",
+					"name": "PROPERTY_HINT_METHOD_OF_VARIANT_TYPE",
 					"value": 28
 				},
 				{
-					"name": "PROPERTY_HINT_METHOD_OF_INSTANCE",
+					"name": "PROPERTY_HINT_METHOD_OF_BASE_TYPE",
 					"value": 29
 				},
 				{
-					"name": "PROPERTY_HINT_METHOD_OF_SCRIPT",
+					"name": "PROPERTY_HINT_METHOD_OF_INSTANCE",
 					"value": 30
 				},
 				{
-					"name": "PROPERTY_HINT_PROPERTY_OF_VARIANT_TYPE",
+					"name": "PROPERTY_HINT_METHOD_OF_SCRIPT",
 					"value": 31
 				},
 				{
-					"name": "PROPERTY_HINT_PROPERTY_OF_BASE_TYPE",
+					"name": "PROPERTY_HINT_PROPERTY_OF_VARIANT_TYPE",
 					"value": 32
 				},
 				{
-					"name": "PROPERTY_HINT_PROPERTY_OF_INSTANCE",
+					"name": "PROPERTY_HINT_PROPERTY_OF_BASE_TYPE",
 					"value": 33
 				},
 				{
-					"name": "PROPERTY_HINT_PROPERTY_OF_SCRIPT",
+					"name": "PROPERTY_HINT_PROPERTY_OF_INSTANCE",
 					"value": 34
 				},
 				{
-					"name": "PROPERTY_HINT_OBJECT_TOO_BIG",
+					"name": "PROPERTY_HINT_PROPERTY_OF_SCRIPT",
 					"value": 35
 				},
 				{
-					"name": "PROPERTY_HINT_NODE_PATH_VALID_TYPES",
+					"name": "PROPERTY_HINT_OBJECT_TOO_BIG",
 					"value": 36
 				},
 				{
-					"name": "PROPERTY_HINT_SAVE_FILE",
+					"name": "PROPERTY_HINT_NODE_PATH_VALID_TYPES",
 					"value": 37
 				},
 				{
-					"name": "PROPERTY_HINT_INT_IS_OBJECTID",
+					"name": "PROPERTY_HINT_SAVE_FILE",
 					"value": 38
 				},
 				{
-					"name": "PROPERTY_HINT_INT_IS_POINTER",
-					"value": 40
-				},
-				{
-					"name": "PROPERTY_HINT_ARRAY_TYPE",
+					"name": "PROPERTY_HINT_INT_IS_OBJECTID",
 					"value": 39
 				},
 				{
-					"name": "PROPERTY_HINT_LOCALE_ID",
+					"name": "PROPERTY_HINT_INT_IS_POINTER",
 					"value": 41
 				},
 				{
-					"name": "PROPERTY_HINT_LOCALIZABLE_STRING",
+					"name": "PROPERTY_HINT_ARRAY_TYPE",
+					"value": 40
+				},
+				{
+					"name": "PROPERTY_HINT_LOCALE_ID",
 					"value": 42
 				},
 				{
-					"name": "PROPERTY_HINT_MAX",
+					"name": "PROPERTY_HINT_LOCALIZABLE_STRING",
 					"value": 43
+				},
+				{
+					"name": "PROPERTY_HINT_MAX",
+					"value": 44
 				}
 			]
 		},
@@ -3457,6 +3461,10 @@
 				{
 					"name": "METHOD_FLAG_FROM_SCRIPT",
 					"value": 64
+				},
+				{
+					"name": "METHOD_FLAG_VARARG",
+					"value": 128
 				},
 				{
 					"name": "METHOD_FLAG_STATIC",
@@ -7161,7 +7169,7 @@
 					"hash": 2,
 					"arguments": [
 						{
-							"name": "position",
+							"name": "length",
 							"type": "int"
 						}
 					]
@@ -7175,7 +7183,7 @@
 					"hash": 2,
 					"arguments": [
 						{
-							"name": "position",
+							"name": "length",
 							"type": "int"
 						}
 					]
@@ -13758,6 +13766,33 @@
 					]
 				},
 				{
+					"name": "from_ok_hsl",
+					"return_type": "Color",
+					"is_vararg": false,
+					"is_const": false,
+					"is_static": true,
+					"hash": 3,
+					"arguments": [
+						{
+							"name": "h",
+							"type": "float"
+						},
+						{
+							"name": "s",
+							"type": "float"
+						},
+						{
+							"name": "l",
+							"type": "float"
+						},
+						{
+							"name": "alpha",
+							"type": "float",
+							"default_value": "1.0"
+						}
+					]
+				},
+				{
 					"name": "from_rgbe9995",
 					"return_type": "Color",
 					"is_vararg": false,
@@ -14608,6 +14643,24 @@
 					"hash": 134152229
 				},
 				{
+					"name": "merge",
+					"is_vararg": false,
+					"is_const": false,
+					"is_static": false,
+					"hash": 1,
+					"arguments": [
+						{
+							"name": "dictionary",
+							"type": "Dictionary"
+						},
+						{
+							"name": "overwrite",
+							"type": "bool",
+							"default_value": "false"
+						}
+					]
+				},
+				{
 					"name": "has",
 					"return_type": "bool",
 					"is_vararg": false,
@@ -15230,6 +15283,34 @@
 							"name": "accum",
 							"type": "Variant",
 							"default_value": "null"
+						}
+					]
+				},
+				{
+					"name": "any",
+					"return_type": "bool",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 22,
+					"arguments": [
+						{
+							"name": "method",
+							"type": "Callable"
+						}
+					]
+				},
+				{
+					"name": "all",
+					"return_type": "bool",
+					"is_vararg": false,
+					"is_const": true,
+					"is_static": false,
+					"hash": 22,
+					"arguments": [
+						{
+							"name": "method",
+							"type": "Callable"
 						}
 					]
 				},
@@ -26446,7 +26527,7 @@
 					"arguments": [
 						{
 							"name": "name",
-							"type": "Animation"
+							"type": "StringName"
 						}
 					]
 				},
@@ -26455,7 +26536,7 @@
 					"arguments": [
 						{
 							"name": "name",
-							"type": "Animation"
+							"type": "StringName"
 						}
 					]
 				},
@@ -26464,11 +26545,11 @@
 					"arguments": [
 						{
 							"name": "name",
-							"type": "Animation"
+							"type": "StringName"
 						},
 						{
 							"name": "to_name",
-							"type": "Animation"
+							"type": "StringName"
 						}
 					]
 				}
@@ -46493,6 +46574,31 @@
 					}
 				},
 				{
+					"name": "set_text_overrun_behavior",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "overrun_behavior",
+							"type": "enum::TextParagraph.OverrunBehavior"
+						}
+					]
+				},
+				{
+					"name": "get_text_overrun_behavior",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "enum::TextParagraph.OverrunBehavior"
+					}
+				},
+				{
 					"name": "set_text_direction",
 					"is_const": false,
 					"is_vararg": false,
@@ -46786,6 +46892,13 @@
 					"name": "alignment",
 					"setter": "set_text_alignment",
 					"getter": "get_text_alignment",
+					"index": -1
+				},
+				{
+					"type": "int",
+					"name": "text_overrun_behavior",
+					"setter": "set_text_overrun_behavior",
+					"getter": "get_text_overrun_behavior",
 					"index": -1
 				},
 				{
@@ -63319,6 +63432,10 @@
 						{
 							"name": "SHAPE_VHS_CIRCLE",
 							"value": 2
+						},
+						{
+							"name": "SHAPE_OKHSL_CIRCLE",
+							"value": 3
 						}
 					]
 				}
@@ -73949,13 +74066,6 @@
 					]
 				}
 			]
-		},
-		{
-			"name": "DisplayServerOSX",
-			"is_refcounted": false,
-			"is_instantiable": false,
-			"inherits": "DisplayServer",
-			"api_type": "core"
 		},
 		{
 			"name": "ENetConnection",
@@ -88804,6 +88914,45 @@
 					}
 				},
 				{
+					"name": "set_face_index",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "face_index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "get_face_index",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					}
+				},
+				{
+					"name": "get_face_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					}
+				},
+				{
 					"name": "set_antialiased",
 					"is_const": false,
 					"is_vararg": false,
@@ -90607,6 +90756,13 @@
 					"name": "data",
 					"setter": "set_data",
 					"getter": "get_data",
+					"index": -1
+				},
+				{
+					"type": "int",
+					"name": "face_index",
+					"setter": "set_face_index",
+					"getter": "get_face_index",
 					"index": -1
 				},
 				{
@@ -116149,6 +116305,13 @@
 					"index": -1
 				},
 				{
+					"type": "Array",
+					"name": "light_textures",
+					"setter": "_set_light_textures_data",
+					"getter": "_get_light_textures_data",
+					"index": -1
+				},
+				{
 					"type": "bool",
 					"name": "uses_spherical_harmonics",
 					"setter": "set_uses_spherical_harmonics",
@@ -123582,7 +123745,7 @@
 					}
 				},
 				{
-					"name": "set_navigable_layers",
+					"name": "set_navigation_layers",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -123590,14 +123753,14 @@
 					"hash": 134188166,
 					"arguments": [
 						{
-							"name": "navigable_layers",
+							"name": "navigation_layers",
 							"type": "int",
 							"meta": "uint32"
 						}
 					]
 				},
 				{
-					"name": "get_navigable_layers",
+					"name": "get_navigation_layers",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -123606,6 +123769,31 @@
 					"return_value": {
 						"type": "int",
 						"meta": "uint32"
+					}
+				},
+				{
+					"name": "set_navigation_map",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "navigation_map",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "get_navigation_map",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "RID"
 					}
 				},
 				{
@@ -123817,9 +124005,9 @@
 				},
 				{
 					"type": "int",
-					"name": "navigable_layers",
-					"setter": "set_navigable_layers",
-					"getter": "get_navigable_layers",
+					"name": "navigation_layers",
+					"setter": "set_navigation_layers",
+					"getter": "get_navigation_layers",
 					"index": -1
 				}
 			]
@@ -124109,7 +124297,7 @@
 					}
 				},
 				{
-					"name": "set_navigable_layers",
+					"name": "set_navigation_layers",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -124117,14 +124305,14 @@
 					"hash": 134188166,
 					"arguments": [
 						{
-							"name": "navigable_layers",
+							"name": "navigation_layers",
 							"type": "int",
 							"meta": "uint32"
 						}
 					]
 				},
 				{
-					"name": "get_navigable_layers",
+					"name": "get_navigation_layers",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -124133,6 +124321,31 @@
 					"return_value": {
 						"type": "int",
 						"meta": "uint32"
+					}
+				},
+				{
+					"name": "set_navigation_map",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "navigation_map",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "get_navigation_map",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "RID"
 					}
 				},
 				{
@@ -124358,9 +124571,9 @@
 				},
 				{
 					"type": "int",
-					"name": "navigable_layers",
-					"setter": "set_navigable_layers",
-					"getter": "get_navigable_layers",
+					"name": "navigation_layers",
+					"setter": "set_navigation_layers",
+					"getter": "get_navigation_layers",
 					"index": -1
 				}
 			]
@@ -125136,147 +125349,147 @@
 				},
 				{
 					"type": "int",
-					"name": "sample_partition_type/sample_partition_type",
+					"name": "sample_partition_type",
 					"setter": "set_sample_partition_type",
 					"getter": "get_sample_partition_type",
 					"index": -1
 				},
 				{
 					"type": "int",
-					"name": "geometry/parsed_geometry_type",
+					"name": "geometry_parsed_geometry_type",
 					"setter": "set_parsed_geometry_type",
 					"getter": "get_parsed_geometry_type",
 					"index": -1
 				},
 				{
 					"type": "int",
-					"name": "geometry/collision_mask",
+					"name": "geometry_collision_mask",
 					"setter": "set_collision_mask",
 					"getter": "get_collision_mask",
 					"index": -1
 				},
 				{
 					"type": "int",
-					"name": "geometry/source_geometry_mode",
+					"name": "geometry_source_geometry_mode",
 					"setter": "set_source_geometry_mode",
 					"getter": "get_source_geometry_mode",
 					"index": -1
 				},
 				{
 					"type": "String",
-					"name": "geometry/source_group_name",
+					"name": "geometry_source_group_name",
 					"setter": "set_source_group_name",
 					"getter": "get_source_group_name",
 					"index": -1
 				},
 				{
 					"type": "float",
-					"name": "cell/size",
+					"name": "cell_size",
 					"setter": "set_cell_size",
 					"getter": "get_cell_size",
 					"index": -1
 				},
 				{
 					"type": "float",
-					"name": "cell/height",
+					"name": "cell_height",
 					"setter": "set_cell_height",
 					"getter": "get_cell_height",
 					"index": -1
 				},
 				{
 					"type": "float",
-					"name": "agent/height",
+					"name": "agent_height",
 					"setter": "set_agent_height",
 					"getter": "get_agent_height",
 					"index": -1
 				},
 				{
 					"type": "float",
-					"name": "agent/radius",
+					"name": "agent_radius",
 					"setter": "set_agent_radius",
 					"getter": "get_agent_radius",
 					"index": -1
 				},
 				{
 					"type": "float",
-					"name": "agent/max_climb",
+					"name": "agent_max_climb",
 					"setter": "set_agent_max_climb",
 					"getter": "get_agent_max_climb",
 					"index": -1
 				},
 				{
 					"type": "float",
-					"name": "agent/max_slope",
+					"name": "agent_max_slope",
 					"setter": "set_agent_max_slope",
 					"getter": "get_agent_max_slope",
 					"index": -1
 				},
 				{
 					"type": "float",
-					"name": "region/min_size",
+					"name": "region_min_size",
 					"setter": "set_region_min_size",
 					"getter": "get_region_min_size",
 					"index": -1
 				},
 				{
 					"type": "float",
-					"name": "region/merge_size",
+					"name": "region_merge_size",
 					"setter": "set_region_merge_size",
 					"getter": "get_region_merge_size",
 					"index": -1
 				},
 				{
 					"type": "float",
-					"name": "edge/max_length",
+					"name": "edge_max_length",
 					"setter": "set_edge_max_length",
 					"getter": "get_edge_max_length",
 					"index": -1
 				},
 				{
 					"type": "float",
-					"name": "edge/max_error",
+					"name": "edge_max_error",
 					"setter": "set_edge_max_error",
 					"getter": "get_edge_max_error",
 					"index": -1
 				},
 				{
 					"type": "float",
-					"name": "polygon/verts_per_poly",
+					"name": "polygon_verts_per_poly",
 					"setter": "set_verts_per_poly",
 					"getter": "get_verts_per_poly",
 					"index": -1
 				},
 				{
 					"type": "float",
-					"name": "detail/sample_distance",
+					"name": "detail_sample_distance",
 					"setter": "set_detail_sample_distance",
 					"getter": "get_detail_sample_distance",
 					"index": -1
 				},
 				{
 					"type": "float",
-					"name": "detail/sample_max_error",
+					"name": "detail_sample_max_error",
 					"setter": "set_detail_sample_max_error",
 					"getter": "get_detail_sample_max_error",
 					"index": -1
 				},
 				{
 					"type": "bool",
-					"name": "filter/low_hanging_obstacles",
+					"name": "filter_low_hanging_obstacles",
 					"setter": "set_filter_low_hanging_obstacles",
 					"getter": "get_filter_low_hanging_obstacles",
 					"index": -1
 				},
 				{
 					"type": "bool",
-					"name": "filter/ledge_spans",
+					"name": "filter_ledge_spans",
 					"setter": "set_filter_ledge_spans",
 					"getter": "get_filter_ledge_spans",
 					"index": -1
 				},
 				{
 					"type": "bool",
-					"name": "filter/filter_walkable_low_height_spans",
+					"name": "filter_walkable_low_height_spans",
 					"setter": "set_filter_walkable_low_height_spans",
 					"getter": "get_filter_walkable_low_height_spans",
 					"index": -1
@@ -125791,7 +126004,7 @@
 					}
 				},
 				{
-					"name": "set_layers",
+					"name": "set_navigation_layers",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -125799,14 +126012,14 @@
 					"hash": 134188166,
 					"arguments": [
 						{
-							"name": "layers",
+							"name": "navigation_layers",
 							"type": "int",
 							"meta": "uint32"
 						}
 					]
 				},
 				{
-					"name": "get_layers",
+					"name": "get_navigation_layers",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -125827,6 +126040,60 @@
 					"return_value": {
 						"type": "RID"
 					}
+				},
+				{
+					"name": "set_enter_cost",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "enter_cost",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_enter_cost",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_travel_cost",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "travel_cost",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_travel_cost",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
 				}
 			],
 			"properties": [
@@ -125846,9 +126113,23 @@
 				},
 				{
 					"type": "int",
-					"name": "layers",
-					"setter": "set_layers",
-					"getter": "get_layers",
+					"name": "navigation_layers",
+					"setter": "set_navigation_layers",
+					"getter": "get_navigation_layers",
+					"index": -1
+				},
+				{
+					"type": "float",
+					"name": "enter_cost",
+					"setter": "set_enter_cost",
+					"getter": "get_enter_cost",
+					"index": -1
+				},
+				{
+					"type": "float",
+					"name": "travel_cost",
+					"setter": "set_travel_cost",
+					"getter": "get_travel_cost",
 					"index": -1
 				}
 			]
@@ -125911,7 +126192,7 @@
 					}
 				},
 				{
-					"name": "set_layers",
+					"name": "set_navigation_layers",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -125919,14 +126200,14 @@
 					"hash": 134188166,
 					"arguments": [
 						{
-							"name": "layers",
+							"name": "navigation_layers",
 							"type": "int",
 							"meta": "uint32"
 						}
 					]
 				},
 				{
-					"name": "get_layers",
+					"name": "get_navigation_layers",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -125946,6 +126227,60 @@
 					"hash": 135338183,
 					"return_value": {
 						"type": "RID"
+					}
+				},
+				{
+					"name": "set_enter_cost",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "enter_cost",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_enter_cost",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
+					"name": "set_travel_cost",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "travel_cost",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_travel_cost",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
 					}
 				},
 				{
@@ -125989,9 +126324,23 @@
 				},
 				{
 					"type": "int",
-					"name": "layers",
-					"setter": "set_layers",
-					"getter": "get_layers",
+					"name": "navigation_layers",
+					"setter": "set_navigation_layers",
+					"getter": "get_navigation_layers",
+					"index": -1
+				},
+				{
+					"type": "float",
+					"name": "enter_cost",
+					"setter": "set_enter_cost",
+					"getter": "get_enter_cost",
+					"index": -1
+				},
+				{
+					"type": "float",
+					"name": "travel_cost",
+					"setter": "set_travel_cost",
+					"getter": "get_travel_cost",
 					"index": -1
 				}
 			]
@@ -126151,7 +126500,7 @@
 							"type": "bool"
 						},
 						{
-							"name": "layers",
+							"name": "navigation_layers",
 							"type": "int",
 							"meta": "uint32",
 							"default_value": "1"
@@ -126246,6 +126595,80 @@
 					}
 				},
 				{
+					"name": "region_set_enter_cost",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134224136,
+					"arguments": [
+						{
+							"name": "region",
+							"type": "RID"
+						},
+						{
+							"name": "enter_cost",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "region_get_enter_cost",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135374120,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "region",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "region_set_travel_cost",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134224136,
+					"arguments": [
+						{
+							"name": "region",
+							"type": "RID"
+						},
+						{
+							"name": "travel_cost",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "region_get_travel_cost",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135374120,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "region",
+							"type": "RID"
+						}
+					]
+				},
+				{
 					"name": "region_set_map",
 					"is_const": true,
 					"is_vararg": false,
@@ -126281,7 +126704,7 @@
 					]
 				},
 				{
-					"name": "region_set_layers",
+					"name": "region_set_navigation_layers",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -126293,14 +126716,14 @@
 							"type": "RID"
 						},
 						{
-							"name": "layers",
+							"name": "navigation_layers",
 							"type": "int",
 							"meta": "uint32"
 						}
 					]
 				},
 				{
-					"name": "region_get_layers",
+					"name": "region_get_navigation_layers",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -126871,7 +127294,7 @@
 							"type": "bool"
 						},
 						{
-							"name": "layers",
+							"name": "navigation_layers",
 							"type": "int",
 							"meta": "uint32",
 							"default_value": "1"
@@ -127017,6 +127440,80 @@
 					}
 				},
 				{
+					"name": "region_set_enter_cost",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134224136,
+					"arguments": [
+						{
+							"name": "region",
+							"type": "RID"
+						},
+						{
+							"name": "enter_cost",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "region_get_enter_cost",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135374120,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "region",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "region_set_travel_cost",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134224136,
+					"arguments": [
+						{
+							"name": "region",
+							"type": "RID"
+						},
+						{
+							"name": "travel_cost",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "region_get_travel_cost",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135374120,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					},
+					"arguments": [
+						{
+							"name": "region",
+							"type": "RID"
+						}
+					]
+				},
+				{
 					"name": "region_set_map",
 					"is_const": true,
 					"is_vararg": false,
@@ -127052,7 +127549,7 @@
 					]
 				},
 				{
-					"name": "region_set_layers",
+					"name": "region_set_navigation_layers",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -127064,14 +127561,14 @@
 							"type": "RID"
 						},
 						{
-							"name": "layers",
+							"name": "navigation_layers",
 							"type": "int",
 							"meta": "uint32"
 						}
 					]
 				},
 				{
-					"name": "region_get_layers",
+					"name": "region_get_navigation_layers",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -129718,6 +130215,33 @@
 					}
 				},
 				{
+					"name": "set_global_skew",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "radians",
+							"type": "float",
+							"meta": "float"
+						}
+					]
+				},
+				{
+					"name": "get_global_skew",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "float",
+						"meta": "float"
+					}
+				},
+				{
 					"name": "set_global_scale",
 					"is_const": false,
 					"is_vararg": false,
@@ -129986,6 +130510,13 @@
 					"name": "global_scale",
 					"setter": "set_global_scale",
 					"getter": "get_global_scale",
+					"index": -1
+				},
+				{
+					"type": "float",
+					"name": "global_skew",
+					"setter": "set_global_skew",
+					"getter": "get_global_skew",
 					"index": -1
 				},
 				{
@@ -132755,7 +133286,7 @@
 					"arguments": [
 						{
 							"name": "property",
-							"type": "String"
+							"type": "StringName"
 						},
 						{
 							"name": "value",
@@ -132776,7 +133307,7 @@
 					"arguments": [
 						{
 							"name": "property",
-							"type": "String"
+							"type": "StringName"
 						}
 					]
 				},
@@ -133171,7 +133702,7 @@
 					"arguments": [
 						{
 							"name": "signal",
-							"type": "String"
+							"type": "StringName"
 						}
 					]
 				},
@@ -133763,6 +134294,779 @@
 					"setter": "set_shadow_mode",
 					"getter": "get_shadow_mode",
 					"index": -1
+				}
+			]
+		},
+		{
+			"name": "OpenXRAction",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "ActionType",
+					"values": [
+						{
+							"name": "OPENXR_ACTION_BOOL",
+							"value": 0
+						},
+						{
+							"name": "OPENXR_ACTION_FLOAT",
+							"value": 1
+						},
+						{
+							"name": "OPENXR_ACTION_VECTOR2",
+							"value": 2
+						},
+						{
+							"name": "OPENXR_ACTION_POSE",
+							"value": 3
+						}
+					]
+				}
+			],
+			"methods": [
+				{
+					"name": "set_localized_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "localized_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_localized_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_action_type",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "action_type",
+							"type": "enum::OpenXRAction.ActionType"
+						}
+					]
+				},
+				{
+					"name": "get_action_type",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "enum::OpenXRAction.ActionType"
+					}
+				},
+				{
+					"name": "set_toplevel_paths",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "toplevel_paths",
+							"type": "PackedStringArray"
+						}
+					]
+				},
+				{
+					"name": "get_toplevel_paths",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "PackedStringArray"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "String",
+					"name": "localized_name",
+					"setter": "set_localized_name",
+					"getter": "get_localized_name",
+					"index": -1
+				},
+				{
+					"type": "int",
+					"name": "action_type",
+					"setter": "set_action_type",
+					"getter": "get_action_type",
+					"index": -1
+				},
+				{
+					"type": "Array",
+					"name": "toplevel_paths",
+					"setter": "set_toplevel_paths",
+					"getter": "get_toplevel_paths",
+					"index": -1
+				}
+			]
+		},
+		{
+			"name": "OpenXRActionMap",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_action_sets",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "action_sets",
+							"type": "Array"
+						}
+					]
+				},
+				{
+					"name": "get_action_sets",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "Array"
+					}
+				},
+				{
+					"name": "get_action_set_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "find_action_set",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135374120,
+					"return_value": {
+						"type": "OpenXRActionSet"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_action_set",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135374120,
+					"return_value": {
+						"type": "OpenXRActionSet"
+					},
+					"arguments": [
+						{
+							"name": "idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "add_action_set",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "action_set",
+							"type": "OpenXRActionSet"
+						}
+					]
+				},
+				{
+					"name": "remove_action_set",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "action_set",
+							"type": "OpenXRActionSet"
+						}
+					]
+				},
+				{
+					"name": "set_interaction_profiles",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "interaction_profiles",
+							"type": "Array"
+						}
+					]
+				},
+				{
+					"name": "get_interaction_profiles",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "Array"
+					}
+				},
+				{
+					"name": "get_interaction_profile_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "find_interaction_profile",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135374120,
+					"return_value": {
+						"type": "OpenXRInteractionProfile"
+					},
+					"arguments": [
+						{
+							"name": "name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_interaction_profile",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135374120,
+					"return_value": {
+						"type": "OpenXRInteractionProfile"
+					},
+					"arguments": [
+						{
+							"name": "idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "add_interaction_profile",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "interaction_profile",
+							"type": "OpenXRInteractionProfile"
+						}
+					]
+				},
+				{
+					"name": "remove_interaction_profile",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "interaction_profile",
+							"type": "OpenXRInteractionProfile"
+						}
+					]
+				},
+				{
+					"name": "create_default_action_sets",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134152229
+				}
+			],
+			"properties": [
+				{
+					"type": "OpenXRActionSet",
+					"name": "action_sets",
+					"setter": "set_action_sets",
+					"getter": "get_action_sets",
+					"index": -1
+				},
+				{
+					"type": "OpenXRInteractionProfile",
+					"name": "interaction_profiles",
+					"setter": "set_interaction_profiles",
+					"getter": "get_interaction_profiles",
+					"index": -1
+				}
+			]
+		},
+		{
+			"name": "OpenXRActionSet",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_localized_name",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "localized_name",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_localized_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "set_priority",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "priority",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_priority",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_action_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_actions",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "actions",
+							"type": "Array"
+						}
+					]
+				},
+				{
+					"name": "get_actions",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "Array"
+					}
+				},
+				{
+					"name": "add_action",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "action",
+							"type": "OpenXRAction"
+						}
+					]
+				},
+				{
+					"name": "remove_action",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "action",
+							"type": "OpenXRAction"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "String",
+					"name": "localized_name",
+					"setter": "set_localized_name",
+					"getter": "get_localized_name",
+					"index": -1
+				},
+				{
+					"type": "int",
+					"name": "priority",
+					"setter": "set_priority",
+					"getter": "get_priority",
+					"index": -1
+				},
+				{
+					"type": "OpenXRAction",
+					"name": "actions",
+					"setter": "set_actions",
+					"getter": "get_actions",
+					"index": -1
+				}
+			]
+		},
+		{
+			"name": "OpenXRIPBinding",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_action",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "action",
+							"type": "OpenXRAction"
+						}
+					]
+				},
+				{
+					"name": "get_action",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "OpenXRAction"
+					}
+				},
+				{
+					"name": "get_path_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_paths",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "paths",
+							"type": "PackedStringArray"
+						}
+					]
+				},
+				{
+					"name": "get_paths",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "PackedStringArray"
+					}
+				},
+				{
+					"name": "has_path",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135374120,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "arg0",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "add_path",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "remove_path",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				}
+			],
+			"properties": [
+				{
+					"type": "OpenXRAction",
+					"name": "action",
+					"setter": "set_action",
+					"getter": "get_action",
+					"index": -1
+				},
+				{
+					"type": "Array",
+					"name": "paths",
+					"setter": "set_paths",
+					"getter": "get_paths",
+					"index": -1
+				}
+			]
+		},
+		{
+			"name": "OpenXRInteractionProfile",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "Resource",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "set_interaction_profile_path",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "interaction_profile_path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_interaction_profile_path",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "get_binding_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_binding",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135374120,
+					"return_value": {
+						"type": "OpenXRIPBinding"
+					},
+					"arguments": [
+						{
+							"name": "index",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "set_bindings",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "bindings",
+							"type": "Array"
+						}
+					]
+				},
+				{
+					"name": "get_bindings",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "Array"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "String",
+					"name": "interaction_profile_path",
+					"setter": "set_interaction_profile_path",
+					"getter": "get_interaction_profile_path",
+					"index": -1
+				},
+				{
+					"type": "OpenXRIPBinding",
+					"name": "bindings",
+					"setter": "set_bindings",
+					"getter": "get_bindings",
+					"index": -1
+				}
+			]
+		},
+		{
+			"name": "OpenXRInterface",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "XRInterface",
+			"api_type": "core",
+			"signals": [
+				{
+					"name": "session_begun"
+				},
+				{
+					"name": "session_stopping"
+				},
+				{
+					"name": "session_focussed"
+				},
+				{
+					"name": "session_visible"
+				},
+				{
+					"name": "pose_recentered"
 				}
 			]
 		},
@@ -168658,6 +169962,10 @@
 						{
 							"name": "VIEWPORT_DEBUG_DRAW_OCCLUDERS",
 							"value": 24
+						},
+						{
+							"name": "VIEWPORT_DEBUG_DRAW_MOTION_VECTORS",
+							"value": 25
 						}
 					]
 				},
@@ -174266,6 +175574,24 @@
 						{
 							"name": "mode",
 							"type": "enum::RenderingServer.ViewportScreenSpaceAA"
+						}
+					]
+				},
+				{
+					"name": "viewport_set_use_taa",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134224103,
+					"arguments": [
+						{
+							"name": "viewport",
+							"type": "RID"
+						},
+						{
+							"name": "enable",
+							"type": "bool"
 						}
 					]
 				},
@@ -210145,6 +211471,61 @@
 					]
 				},
 				{
+					"name": "font_set_face_index",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134224103,
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						},
+						{
+							"name": "face_index",
+							"type": "int",
+							"meta": "int64"
+						}
+					]
+				},
+				{
+					"name": "font_get_face_index",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135374120,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "font_get_face_count",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135374120,
+					"return_value": {
+						"type": "int",
+						"meta": "int64"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						}
+					]
+				},
+				{
 					"name": "font_set_style",
 					"is_const": false,
 					"is_vararg": false,
@@ -213951,6 +215332,55 @@
 					]
 				},
 				{
+					"name": "font_set_face_index",
+					"is_const": false,
+					"is_static": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						},
+						{
+							"name": "face_index",
+							"type": "int"
+						}
+					]
+				},
+				{
+					"name": "font_get_face_index",
+					"is_const": true,
+					"is_static": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "int"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						}
+					]
+				},
+				{
+					"name": "font_get_face_count",
+					"is_const": true,
+					"is_static": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "int"
+					},
+					"arguments": [
+						{
+							"name": "font_rid",
+							"type": "RID"
+						}
+					]
+				},
+				{
 					"name": "font_set_style",
 					"is_const": false,
 					"is_static": false,
@@ -217222,13 +218652,6 @@
 					]
 				}
 			]
-		},
-		{
-			"name": "TextServerFallback",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "TextServerExtension",
-			"api_type": "core"
 		},
 		{
 			"name": "TextServerManager",
@@ -221047,7 +222470,34 @@
 					}
 				},
 				{
-					"name": "set_peering_bit_terrain",
+					"name": "set_terrain",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "terrain",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_terrain",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "set_terrain_peering_bit",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -221066,7 +222516,7 @@
 					]
 				},
 				{
-					"name": "get_peering_bit_terrain",
+					"name": "get_terrain_peering_bit",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -221287,6 +222737,13 @@
 					"name": "terrain_set",
 					"setter": "set_terrain_set",
 					"getter": "get_terrain_set",
+					"index": -1
+				},
+				{
+					"type": "int",
+					"name": "terrain",
+					"setter": "set_terrain",
+					"getter": "get_terrain",
 					"index": -1
 				},
 				{
@@ -222003,12 +223460,12 @@
 					]
 				},
 				{
-					"name": "set_cells_from_surrounding_terrains",
+					"name": "set_cells_terrain_connect",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 136835882,
+					"hash": 138021803,
 					"arguments": [
 						{
 							"name": "layer",
@@ -222021,6 +223478,45 @@
 						},
 						{
 							"name": "terrain_set",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "terrain",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "ignore_empty_terrains",
+							"type": "bool",
+							"default_value": "true"
+						}
+					]
+				},
+				{
+					"name": "set_cells_terrain_path",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 138021803,
+					"arguments": [
+						{
+							"name": "layer",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "path",
+							"type": "Array"
+						},
+						{
+							"name": "terrain_set",
+							"type": "int",
+							"meta": "int32"
+						},
+						{
+							"name": "terrain",
 							"type": "int",
 							"meta": "int32"
 						},
@@ -233091,6 +234587,10 @@
 						{
 							"name": "DEBUG_DRAW_OCCLUDERS",
 							"value": 24
+						},
+						{
+							"name": "DEBUG_DRAW_MOTION_VECTORS",
+							"value": 25
 						}
 					]
 				},
@@ -233369,6 +234869,31 @@
 					"hash": 135338183,
 					"return_value": {
 						"type": "enum::Viewport.ScreenSpaceAA"
+					}
+				},
+				{
+					"name": "set_use_taa",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "is_using_taa",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 135338183,
+					"return_value": {
+						"type": "bool"
 					}
 				},
 				{
@@ -234409,6 +235934,13 @@
 					"name": "screen_space_aa",
 					"setter": "set_screen_space_aa",
 					"getter": "get_screen_space_aa",
+					"index": -1
+				},
+				{
+					"type": "bool",
+					"name": "use_taa",
+					"setter": "set_use_taa",
+					"getter": "is_using_taa",
 					"index": -1
 				},
 				{
@@ -242164,7 +243696,7 @@
 							"value": 16
 						},
 						{
-							"name": "FUNC_FRAC",
+							"name": "FUNC_FRACT",
 							"value": 17
 						},
 						{
@@ -246192,7 +247724,7 @@
 							"value": 17
 						},
 						{
-							"name": "FUNC_FRAC",
+							"name": "FUNC_FRACT",
 							"value": 18
 						},
 						{
@@ -247537,6 +249069,20 @@
 			],
 			"methods": [
 				{
+					"name": "set_default_extension",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 134188166,
+					"arguments": [
+						{
+							"name": "extension_class",
+							"type": "StringName"
+						}
+					]
+				},
+				{
 					"name": "initialize",
 					"is_const": false,
 					"is_vararg": false,
@@ -247871,14 +249417,6 @@
 					"is_static": false,
 					"is_vararg": false,
 					"is_virtual": true
-				},
-				{
-					"name": "make_default",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 134152229
 				}
 			]
 		},
