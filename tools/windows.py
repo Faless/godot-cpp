@@ -1,4 +1,5 @@
 import sys
+import platform
 
 import my_spawn
 from SCons.Tool.MSCommon import msvc_exists
@@ -6,6 +7,7 @@ from SCons.Variables import *
 
 
 def options(opts):
+    opts.Add(EnumVariable("arch", "CPU architecture", platform.machine().lower(), ["x86_32", "x86_64"]))
     opts.Add(BoolVariable("use_mingw", "Use the MinGW compiler instead of MSVC - only effective on Windows", False))
 
 

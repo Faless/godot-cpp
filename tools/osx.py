@@ -1,9 +1,12 @@
 import os
 import sys
+
 import osxcross
+from SCons.Variables import EnumVariable
 
 
 def options(opts):
+    opts.Add(EnumVariable("arch", "CPU architecture", "universal", ["universal", "x86_64", "arm64"]))
     opts.Add("macos_deployment_target", "macOS deployment target", "default")
     opts.Add("macos_sdk_path", "macOS SDK path", "")
     osxcross.options(opts)

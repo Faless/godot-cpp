@@ -1,4 +1,9 @@
 import os
+from SCons.Variables import EnumVariable
+
+
+def options(opts):
+    opts.Add(EnumVariable("arch", "CPU architecture", "wasm32", ["wasm32"]))
 
 
 def exists(env):

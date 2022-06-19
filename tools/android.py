@@ -2,9 +2,11 @@ import os
 import sys
 import my_spawn
 from SCons.Script import ARGUMENTS
+from SCons.Variables import EnumVariable
 
 
 def options(opts):
+    opts.Add(EnumVariable("arch", "CPU architecture", "arm64", ["x86_32", "x86_64", "arm32", "arm64"]))
     opts.Add(
         "android_api_level",
         "Target Android API level",

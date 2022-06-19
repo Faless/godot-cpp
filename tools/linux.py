@@ -1,7 +1,16 @@
+import platform
 from SCons.Variables import *
 
 
 def options(opts):
+    opts.Add(
+        EnumVariable(
+            "arch",
+            "CPU architecture",
+            platform.machine().lower(),
+            ["x86_32", "x86_64", "arm32", "arm64", "rv64", "ppc32", "ppc64"],
+        )
+    )
     opts.Add(BoolVariable("use_llvm", "Use the LLVM compiler - only effective when targeting Linux", False))
 
 

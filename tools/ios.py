@@ -4,6 +4,7 @@ import subprocess
 import ios_osxcross
 from SCons.Variables import *
 
+
 if sys.version_info < (3,):
 
     def decode_utf8(x):
@@ -17,6 +18,7 @@ else:
 
 
 def options(opts):
+    opts.Add(EnumVariable("arch", "CPU architecture", "universal", ["universal", "x86_64", "arm64"]))
     opts.Add(BoolVariable("ios_simulator", "Target iOS Simulator", False))
     opts.Add("ios_min_version", "Target minimum iphoneos/iphonesimulator version", "10.0")
     opts.Add(
@@ -35,7 +37,7 @@ def exists(env):
 def generate(env):
     if env["arch"] not in ("universal", "arm64", "x86_64"):
         print("Only universal, arm64, and x86_64 are supported on iOS. Exiting.")
-        Exit()
+        sys.exit(1)
 
     if env["ios_simulator"]:
         sdk_name = "iphonesimulator"
