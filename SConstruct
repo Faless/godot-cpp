@@ -6,7 +6,7 @@ import sys
 import subprocess
 from binding_generator import scons_generate_bindings, scons_emit_files
 
-EnsureSConsVersion(4, 0)
+EnsureSConsVersion(3, 0, 0)
 
 
 def add_sources(sources, dir, extension):
