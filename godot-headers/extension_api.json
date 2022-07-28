@@ -109371,6 +109371,69 @@
 			]
 		},
 		{
+			"name": "ImageFormatLoader",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "_get_recognized_extensions",
+					"is_const": true,
+					"is_static": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "PackedStringArray"
+					}
+				},
+				{
+					"name": "_load_image",
+					"is_const": false,
+					"is_static": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "int"
+					},
+					"arguments": [
+						{
+							"name": "p_image",
+							"type": "Image"
+						},
+						{
+							"name": "p_path",
+							"type": "String"
+						},
+						{
+							"name": "p_force_linear",
+							"type": "bool"
+						},
+						{
+							"name": "p_scale",
+							"type": "float"
+						}
+					]
+				},
+				{
+					"name": "add_format_loader",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "remove_format_loader",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				}
+			]
+		},
+		{
 			"name": "ImageTexture",
 			"is_refcounted": true,
 			"is_instantiable": true,
