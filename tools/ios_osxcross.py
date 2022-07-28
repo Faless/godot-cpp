@@ -10,6 +10,8 @@ def exists(env):
 
 
 def generate(env):
+    if "OSXCROSS_IOS" not in os.environ:
+        raise ValueError("To cross compile for iOS, the OSXCross toolchain is required, and OSXCROSS_IOS must be set.")
     compiler_path = "$IOS_TOOLCHAIN_PATH/usr/bin/${ios_triple}"
     env["CC"] = compiler_path + "clang"
     env["CXX"] = compiler_path + "clang++"

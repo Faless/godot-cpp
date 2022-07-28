@@ -132,7 +132,12 @@ if env["arch"] == "":
 tool = Tool(env["platform"], toolpath=["tools"])
 
 if tool is None or not tool.exists(env):
-    raise ValueError("Required toolchain not found for platform " + env["platform"])
+    try:
+        tool.generate(env)
+    except ValueError as e:
+        print("\n".join(e.args))
+    print("Required toolchain not found for platform %s. Exiting." % env["platform"])
+    Exit()
 
 tool.generate(env)
 

@@ -1,16 +1,22 @@
 import os
 
+from SCons.Script import ARGUMENTS
+
 
 def options(opts):
     opts.Add("osxcross_sdk", "OSXCross SDK version", "darwin16")
+    opts.Add("OSXCROSS_ROOT", "OSXCross root folder", os.environ.get("OSXCROSS_ROOT", None))
 
 
 def exists(env):
-    return "OSXCROSS_ROOT" in os.environ
+    return "OSXCROSS_ROOT" in os.environ or "OSXCROSS_ROOT" in ARGUMENTS
 
 
 def generate(env):
-    root = os.environ.get("OSXCROSS_ROOT", "")
+    if "OSXCROSS_ROOT" not in env:
+        raise ValueError("To cross compile for iOS and macOS, the OSXCross toolchain is required, and OSXCROSS_ROOT must be set.")
+
+    root = env["OSXCROSS_ROOT"]
     if env["arch"] == "arm64":
         basecmd = root + "/target/bin/arm64-apple-" + env["osxcross_sdk"] + "-"
     else:

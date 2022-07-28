@@ -34,8 +34,7 @@ def exists(env):
 
 def generate(env):
     if env["arch"] not in ("universal", "arm64", "x86_64"):
-        print("Only universal, arm64, and x86_64 are supported on iOS. Exiting.")
-        Exit()
+        raise ValueError("Only universal, arm64, and x86_64 are supported on iOS. Exiting.")
 
     if env["ios_simulator"]:
         sdk_name = "iphonesimulator"
