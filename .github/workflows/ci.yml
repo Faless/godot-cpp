@@ -22,11 +22,12 @@ jobs:
             artifact-path: bin/libgodot-cpp.linux.release.x86_64.a
             flags: float=64
 
-          - name: 🏁 Windows (x86_64, MSVC)
+          - name: 🏁 Windows (x86_64, MSVC, MT runtime)
             os: windows-2019
             platform: windows
             artifact-name: godot-cpp-windows-msvc2019-x86_64-release
             artifact-path: bin/libgodot-cpp.windows.release.x86_64.lib
+            flags: msvc_runtime=MT
 
           - name: 🏁 Windows (x86_64, MinGW)
             os: windows-2019
