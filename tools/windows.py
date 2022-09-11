@@ -25,12 +25,13 @@ def generate(env):
         env["is_msvc"] = True
         msvc.generate(env)
         env.Append(CPPDEFINES=["TYPED_METHOD_BIND"])
+        env.Append(CCFLAGS=["/EHsc"])
         env.Append(LINKFLAGS=["/WX"])
-        if env["target"] == "debug":
-            env.Append(CCFLAGS=["/Z7", "/Od", "/EHsc", "/D_DEBUG", "/MDd"])
-            env.Append(LINKFLAGS=["/DEBUG:FULL"])
-        elif env["target"] == "release":
-            env.Append(CCFLAGS=["/O2", "/EHsc", "/DNDEBUG", "/MD"])
+        if env["debug_symbols"] or env["target"] == "debug":
+            env.Append(CCFLAGS=["/MDd"])
+        else:
+            env.Append(CCFLAGS=["/MD"])
+
         if env["use_clang_cl"]:
             env["CC"] = "clang-cl"
             env["CXX"] = "clang-cl"
@@ -60,8 +61,7 @@ def generate(env):
         # Want dll suffix
         env["SHLIBSUFFIX"] = ".dll"
 
-        # These options are for a release build even using target=debug
-        env.Append(CCFLAGS=["-O3", "-Wwrite-strings"])
+        env.Append(CCFLAGS=["-Wwrite-strings"])
         env.Append(
             LINKFLAGS=[
                 "--static",
