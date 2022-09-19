@@ -3,9 +3,9 @@
 		"version_major": 4,
 		"version_minor": 0,
 		"version_patch": 0,
-		"version_status": "beta1",
-		"version_build": "official",
-		"version_full_name": "Godot Engine v4.0.beta1.official"
+		"version_status": "beta",
+		"version_build": "custom_build",
+		"version_full_name": "Godot Engine v4.0.beta.custom_build"
 	},
 	"builtin_class_sizes": [
 		{
@@ -27683,6 +27683,17 @@
 					}
 				}
 			],
+			"signals": [
+				{
+					"name": "node_changed",
+					"arguments": [
+						{
+							"name": "node_name",
+							"type": "StringName"
+						}
+					]
+				}
+			],
 			"properties": [
 				{
 					"type": "Vector2",
@@ -29768,6 +29779,9 @@
 					]
 				},
 				{
+					"name": "animation_list_changed"
+				},
+				{
 					"name": "caches_cleared"
 				}
 			],
@@ -30099,6 +30113,11 @@
 							"meta": "float"
 						}
 					]
+				}
+			],
+			"signals": [
+				{
+					"name": "animation_player_changed"
 				}
 			],
 			"properties": [
@@ -69083,6 +69102,394 @@
 			]
 		},
 		{
+			"name": "DirAccess",
+			"is_refcounted": true,
+			"is_instantiable": false,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "open",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1923528528,
+					"return_value": {
+						"type": "DirAccess"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_open_error",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 166280745,
+					"return_value": {
+						"type": "enum::Error"
+					}
+				},
+				{
+					"name": "list_dir_begin",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2018049411,
+					"return_value": {
+						"type": "enum::Error"
+					}
+				},
+				{
+					"name": "get_next",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2841200299,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "current_is_dir",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "list_dir_end",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "get_files",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2981934095,
+					"return_value": {
+						"type": "PackedStringArray"
+					}
+				},
+				{
+					"name": "get_directories",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2981934095,
+					"return_value": {
+						"type": "PackedStringArray"
+					}
+				},
+				{
+					"name": "get_drive_count",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2455072627,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "get_drive",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 990163283,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "idx",
+							"type": "int",
+							"meta": "int32"
+						}
+					]
+				},
+				{
+					"name": "get_current_drive",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2455072627,
+					"return_value": {
+						"type": "int",
+						"meta": "int32"
+					}
+				},
+				{
+					"name": "change_dir",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 166001499,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "todir",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_current_dir",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1287308131,
+					"return_value": {
+						"type": "String"
+					},
+					"arguments": [
+						{
+							"name": "include_drive",
+							"type": "bool",
+							"default_value": "true"
+						}
+					]
+				},
+				{
+					"name": "make_dir",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 166001499,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "make_dir_recursive",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 166001499,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "file_exists",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2323990056,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "dir_exists",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2323990056,
+					"return_value": {
+						"type": "bool"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "get_space_left",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2455072627,
+					"return_value": {
+						"type": "int",
+						"meta": "uint64"
+					}
+				},
+				{
+					"name": "copy",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 198434953,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "from",
+							"type": "String"
+						},
+						{
+							"name": "to",
+							"type": "String"
+						},
+						{
+							"name": "chmod_flags",
+							"type": "int",
+							"meta": "int32",
+							"default_value": "-1"
+						}
+					]
+				},
+				{
+					"name": "rename",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 852856452,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "from",
+							"type": "String"
+						},
+						{
+							"name": "to",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "remove",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 166001499,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						}
+					]
+				},
+				{
+					"name": "set_include_navigational",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_include_navigational",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				},
+				{
+					"name": "set_include_hidden",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2586408642,
+					"arguments": [
+						{
+							"name": "enable",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"name": "get_include_hidden",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 36873697,
+					"return_value": {
+						"type": "bool"
+					}
+				}
+			],
+			"properties": [
+				{
+					"type": "bool",
+					"name": "include_navigational",
+					"setter": "set_include_navigational",
+					"getter": "get_include_navigational",
+					"index": -1
+				},
+				{
+					"type": "bool",
+					"name": "include_hidden",
+					"setter": "set_include_hidden",
+					"getter": "get_include_hidden",
+					"index": -1
+				}
+			]
+		},
+		{
 			"name": "DirectionalLight2D",
 			"is_refcounted": false,
 			"is_instantiable": true,
@@ -69317,370 +69724,6 @@
 					"name": "sky_mode",
 					"setter": "set_sky_mode",
 					"getter": "get_sky_mode",
-					"index": -1
-				}
-			]
-		},
-		{
-			"name": "Directory",
-			"is_refcounted": true,
-			"is_instantiable": true,
-			"inherits": "RefCounted",
-			"api_type": "core",
-			"methods": [
-				{
-					"name": "open",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 166001499,
-					"return_value": {
-						"type": "enum::Error"
-					},
-					"arguments": [
-						{
-							"name": "path",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "list_dir_begin",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2018049411,
-					"return_value": {
-						"type": "enum::Error"
-					}
-				},
-				{
-					"name": "get_next",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2841200299,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "current_is_dir",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "list_dir_end",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
-					"name": "get_files",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2981934095,
-					"return_value": {
-						"type": "PackedStringArray"
-					}
-				},
-				{
-					"name": "get_directories",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2981934095,
-					"return_value": {
-						"type": "PackedStringArray"
-					}
-				},
-				{
-					"name": "get_drive_count",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2455072627,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "get_drive",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 990163283,
-					"return_value": {
-						"type": "String"
-					},
-					"arguments": [
-						{
-							"name": "idx",
-							"type": "int",
-							"meta": "int32"
-						}
-					]
-				},
-				{
-					"name": "get_current_drive",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2455072627,
-					"return_value": {
-						"type": "int",
-						"meta": "int32"
-					}
-				},
-				{
-					"name": "change_dir",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 166001499,
-					"return_value": {
-						"type": "enum::Error"
-					},
-					"arguments": [
-						{
-							"name": "todir",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "get_current_dir",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2841200299,
-					"return_value": {
-						"type": "String"
-					}
-				},
-				{
-					"name": "make_dir",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 166001499,
-					"return_value": {
-						"type": "enum::Error"
-					},
-					"arguments": [
-						{
-							"name": "path",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "make_dir_recursive",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 166001499,
-					"return_value": {
-						"type": "enum::Error"
-					},
-					"arguments": [
-						{
-							"name": "path",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "file_exists",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2323990056,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "path",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "dir_exists",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2323990056,
-					"return_value": {
-						"type": "bool"
-					},
-					"arguments": [
-						{
-							"name": "path",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "get_space_left",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2455072627,
-					"return_value": {
-						"type": "int",
-						"meta": "uint64"
-					}
-				},
-				{
-					"name": "copy",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 852856452,
-					"return_value": {
-						"type": "enum::Error"
-					},
-					"arguments": [
-						{
-							"name": "from",
-							"type": "String"
-						},
-						{
-							"name": "to",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "rename",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 852856452,
-					"return_value": {
-						"type": "enum::Error"
-					},
-					"arguments": [
-						{
-							"name": "from",
-							"type": "String"
-						},
-						{
-							"name": "to",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "remove",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 166001499,
-					"return_value": {
-						"type": "enum::Error"
-					},
-					"arguments": [
-						{
-							"name": "path",
-							"type": "String"
-						}
-					]
-				},
-				{
-					"name": "set_include_navigational",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_include_navigational",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				},
-				{
-					"name": "set_include_hidden",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 2586408642,
-					"arguments": [
-						{
-							"name": "enable",
-							"type": "bool"
-						}
-					]
-				},
-				{
-					"name": "get_include_hidden",
-					"is_const": true,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 36873697,
-					"return_value": {
-						"type": "bool"
-					}
-				}
-			],
-			"properties": [
-				{
-					"type": "bool",
-					"name": "include_navigational",
-					"setter": "set_include_navigational",
-					"getter": "get_include_navigational",
-					"index": -1
-				},
-				{
-					"type": "bool",
-					"name": "include_hidden",
-					"setter": "set_include_hidden",
-					"getter": "get_include_hidden",
 					"index": -1
 				}
 			]
@@ -78767,6 +78810,19 @@
 					"is_virtual": true
 				},
 				{
+					"name": "_set_read_only",
+					"is_const": false,
+					"is_static": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"arguments": [
+						{
+							"name": "read_only",
+							"type": "bool"
+						}
+					]
+				},
+				{
 					"name": "set_label",
 					"is_const": false,
 					"is_vararg": false,
@@ -86452,9 +86508,9 @@
 			]
 		},
 		{
-			"name": "File",
+			"name": "FileAccess",
 			"is_refcounted": true,
-			"is_instantiable": true,
+			"is_instantiable": false,
 			"inherits": "RefCounted",
 			"api_type": "core",
 			"enums": [
@@ -86505,14 +86561,35 @@
 			],
 			"methods": [
 				{
+					"name": "open",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": true,
+					"is_virtual": false,
+					"hash": 1247358404,
+					"return_value": {
+						"type": "FileAccess"
+					},
+					"arguments": [
+						{
+							"name": "path",
+							"type": "String"
+						},
+						{
+							"name": "flags",
+							"type": "enum::FileAccess.ModeFlags"
+						}
+					]
+				},
+				{
 					"name": "open_encrypted",
 					"is_const": false,
 					"is_vararg": false,
-					"is_static": false,
+					"is_static": true,
 					"is_virtual": false,
-					"hash": 1337424764,
+					"hash": 1482131466,
 					"return_value": {
-						"type": "enum::Error"
+						"type": "FileAccess"
 					},
 					"arguments": [
 						{
@@ -86521,7 +86598,7 @@
 						},
 						{
 							"name": "mode_flags",
-							"type": "enum::File.ModeFlags"
+							"type": "enum::FileAccess.ModeFlags"
 						},
 						{
 							"name": "key",
@@ -86533,11 +86610,11 @@
 					"name": "open_encrypted_with_pass",
 					"is_const": false,
 					"is_vararg": false,
-					"is_static": false,
+					"is_static": true,
 					"is_virtual": false,
-					"hash": 1053231221,
+					"hash": 790283377,
 					"return_value": {
-						"type": "enum::Error"
+						"type": "FileAccess"
 					},
 					"arguments": [
 						{
@@ -86546,7 +86623,7 @@
 						},
 						{
 							"name": "mode_flags",
-							"type": "enum::File.ModeFlags"
+							"type": "enum::FileAccess.ModeFlags"
 						},
 						{
 							"name": "pass",
@@ -86558,11 +86635,11 @@
 					"name": "open_compressed",
 					"is_const": false,
 					"is_vararg": false,
-					"is_static": false,
+					"is_static": true,
 					"is_virtual": false,
-					"hash": 2636971738,
+					"hash": 2874458257,
 					"return_value": {
-						"type": "enum::Error"
+						"type": "FileAccess"
 					},
 					"arguments": [
 						{
@@ -86571,46 +86648,28 @@
 						},
 						{
 							"name": "mode_flags",
-							"type": "enum::File.ModeFlags"
+							"type": "enum::FileAccess.ModeFlags"
 						},
 						{
 							"name": "compression_mode",
-							"type": "enum::File.CompressionMode",
+							"type": "enum::FileAccess.CompressionMode",
 							"default_value": "0"
 						}
 					]
 				},
 				{
-					"name": "open",
+					"name": "get_open_error",
 					"is_const": false,
 					"is_vararg": false,
-					"is_static": false,
+					"is_static": true,
 					"is_virtual": false,
-					"hash": 985763342,
+					"hash": 166280745,
 					"return_value": {
 						"type": "enum::Error"
-					},
-					"arguments": [
-						{
-							"name": "path",
-							"type": "String"
-						},
-						{
-							"name": "flags",
-							"type": "enum::File.ModeFlags"
-						}
-					]
+					}
 				},
 				{
 					"name": "flush",
-					"is_const": false,
-					"is_vararg": false,
-					"is_static": false,
-					"is_virtual": false,
-					"hash": 3218959716
-				},
-				{
-					"name": "close",
 					"is_const": false,
 					"is_vararg": false,
 					"is_static": false,
@@ -86661,7 +86720,7 @@
 						{
 							"name": "position",
 							"type": "int",
-							"meta": "int64"
+							"meta": "uint64"
 						}
 					]
 				},
@@ -86867,11 +86926,11 @@
 				},
 				{
 					"name": "get_md5",
-					"is_const": true,
+					"is_const": false,
 					"is_vararg": false,
-					"is_static": false,
+					"is_static": true,
 					"is_virtual": false,
-					"hash": 3135753539,
+					"hash": 1703090593,
 					"return_value": {
 						"type": "String"
 					},
@@ -86884,11 +86943,11 @@
 				},
 				{
 					"name": "get_sha256",
-					"is_const": true,
+					"is_const": false,
 					"is_vararg": false,
-					"is_static": false,
+					"is_static": true,
 					"is_virtual": false,
-					"hash": 3135753539,
+					"hash": 1703090593,
 					"return_value": {
 						"type": "String"
 					},
@@ -86901,11 +86960,11 @@
 				},
 				{
 					"name": "is_big_endian",
-					"is_const": false,
+					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 2240911060,
+					"hash": 36873697,
 					"return_value": {
 						"type": "bool"
 					}
@@ -87182,11 +87241,11 @@
 				},
 				{
 					"name": "get_modified_time",
-					"is_const": true,
+					"is_const": false,
 					"is_vararg": false,
-					"is_static": false,
+					"is_static": true,
 					"is_virtual": false,
-					"hash": 1321353865,
+					"hash": 1597066294,
 					"return_value": {
 						"type": "int",
 						"meta": "uint64"
@@ -106350,6 +106409,96 @@
 			]
 		},
 		{
+			"name": "ImageFormatLoader",
+			"is_refcounted": true,
+			"is_instantiable": false,
+			"inherits": "RefCounted",
+			"api_type": "core",
+			"enums": [
+				{
+					"name": "LoaderFlags",
+					"is_bitfield": true,
+					"values": [
+						{
+							"name": "FLAG_NONE",
+							"value": 0
+						},
+						{
+							"name": "FLAG_FORCE_LINEAR",
+							"value": 1
+						},
+						{
+							"name": "FLAG_CONVERT_COLORS",
+							"value": 2
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ImageFormatLoaderExtension",
+			"is_refcounted": true,
+			"is_instantiable": true,
+			"inherits": "ImageFormatLoader",
+			"api_type": "core",
+			"methods": [
+				{
+					"name": "_get_recognized_extensions",
+					"is_const": true,
+					"is_static": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "PackedStringArray"
+					}
+				},
+				{
+					"name": "_load_image",
+					"is_const": false,
+					"is_static": false,
+					"is_vararg": false,
+					"is_virtual": true,
+					"return_value": {
+						"type": "enum::Error"
+					},
+					"arguments": [
+						{
+							"name": "image",
+							"type": "Image"
+						},
+						{
+							"name": "fileaccess",
+							"type": "FileAccess"
+						},
+						{
+							"name": "flags",
+							"type": "bitfield::ImageFormatLoader.LoaderFlags"
+						},
+						{
+							"name": "scale",
+							"type": "float"
+						}
+					]
+				},
+				{
+					"name": "add_format_loader",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				},
+				{
+					"name": "remove_format_loader",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 3218959716
+				}
+			]
+		},
+		{
 			"name": "ImageTexture",
 			"is_refcounted": true,
 			"is_instantiable": true,
@@ -111803,6 +111952,20 @@
 					}
 				},
 				{
+					"name": "set_data",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 1114965689,
+					"arguments": [
+						{
+							"name": "data",
+							"type": "Variant"
+						}
+					]
+				},
+				{
 					"name": "get_error_line",
 					"is_const": true,
 					"is_vararg": false,
@@ -111824,6 +111987,15 @@
 					"return_value": {
 						"type": "String"
 					}
+				}
+			],
+			"properties": [
+				{
+					"type": "Variant",
+					"name": "data",
+					"setter": "set_data",
+					"getter": "get_data",
+					"index": -1
 				}
 			]
 		},
@@ -133567,6 +133739,10 @@
 				{
 					"name": "NOTIFICATION_VISIBILITY_CHANGED",
 					"value": 43
+				},
+				{
+					"name": "NOTIFICATION_LOCAL_TRANSFORM_CHANGED",
+					"value": 44
 				}
 			],
 			"enums": [
@@ -135646,6 +135822,28 @@
 				},
 				{
 					"name": "get_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "get_distribution_name",
+					"is_const": true,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 201670096,
+					"return_value": {
+						"type": "String"
+					}
+				},
+				{
+					"name": "get_version",
 					"is_const": true,
 					"is_vararg": false,
 					"is_static": false,
@@ -143762,7 +143960,7 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1707139212,
+					"hash": 3198110832,
 					"return_value": {
 						"type": "KinematicCollision2D"
 					},
@@ -143781,6 +143979,11 @@
 							"type": "float",
 							"meta": "float",
 							"default_value": "0.08"
+						},
+						{
+							"name": "recovery_as_collision",
+							"type": "bool",
+							"default_value": "false"
 						}
 					]
 				},
@@ -143790,7 +143993,7 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 498344496,
+					"hash": 1369208982,
 					"return_value": {
 						"type": "bool"
 					},
@@ -143813,6 +144016,11 @@
 							"type": "float",
 							"meta": "float",
 							"default_value": "0.08"
+						},
+						{
+							"name": "recovery_as_collision",
+							"type": "bool",
+							"default_value": "false"
 						}
 					]
 				},
@@ -143870,7 +144078,7 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3373113249,
+					"hash": 1140990067,
 					"return_value": {
 						"type": "KinematicCollision3D"
 					},
@@ -143891,6 +144099,11 @@
 							"default_value": "0.001"
 						},
 						{
+							"name": "recovery_as_collision",
+							"type": "bool",
+							"default_value": "false"
+						},
+						{
 							"name": "max_collisions",
 							"type": "int",
 							"meta": "int32",
@@ -143904,7 +144117,7 @@
 					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 3957778045,
+					"hash": 2082761915,
 					"return_value": {
 						"type": "bool"
 					},
@@ -143927,6 +144140,11 @@
 							"type": "float",
 							"meta": "float",
 							"default_value": "0.001"
+						},
+						{
+							"name": "recovery_as_collision",
+							"type": "bool",
+							"default_value": "false"
 						},
 						{
 							"name": "max_collisions",
@@ -165401,6 +165619,24 @@
 						{
 							"name": "hint",
 							"type": "Dictionary"
+						}
+					]
+				},
+				{
+					"name": "set_restart_if_changed",
+					"is_const": false,
+					"is_vararg": false,
+					"is_static": false,
+					"is_virtual": false,
+					"hash": 2678287736,
+					"arguments": [
+						{
+							"name": "name",
+							"type": "String"
+						},
+						{
+							"name": "restart",
+							"type": "bool"
 						}
 					]
 				},
@@ -242998,36 +243234,28 @@
 				{
 					"name": "add_do_method",
 					"is_const": false,
-					"is_vararg": true,
+					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1517810467,
+					"hash": 1611583062,
 					"arguments": [
 						{
-							"name": "object",
-							"type": "Object"
-						},
-						{
-							"name": "method",
-							"type": "StringName"
+							"name": "callable",
+							"type": "Callable"
 						}
 					]
 				},
 				{
 					"name": "add_undo_method",
 					"is_const": false,
-					"is_vararg": true,
+					"is_vararg": false,
 					"is_static": false,
 					"is_virtual": false,
-					"hash": 1517810467,
+					"hash": 1611583062,
 					"arguments": [
 						{
-							"name": "object",
-							"type": "Object"
-						},
-						{
-							"name": "method",
-							"type": "StringName"
+							"name": "callable",
+							"type": "Callable"
 						}
 					]
 				},
