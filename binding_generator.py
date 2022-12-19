@@ -140,19 +140,25 @@ def print_file_list(api_filepath, output_dir, headers=False, sources=False):
 
 
 def scons_emit_files(target, source, env):
-    files = [env.File(f) for f in get_file_list(str(source[0]), target[0].abspath, True, True)]
+    base_dir = Path(env.Dir(".").abspath)
+    files = [env.File(f) for f in get_file_list(str(source[0]), base_dir, True, True)]
     env.Clean(files, target)
-    return [target[0]] + files, source
+    return [env.File((base_dir / "gen" / "bindings.out").as_posix())] + files, source
 
 
 def scons_generate_bindings(target, source, env):
+    base_dir = Path(target[0].abspath).parent.parent.as_posix()
     generate_bindings(
         str(source[0]),
         env["generate_template_get_node"],
         "32" if "32" in env["arch"] else "64",
         "double" if (env["float"] == "64") else "float",
-        target[0].abspath,
+        base_dir,
     )
+    with open(target[0].abspath, "w") as w:
+        for f in get_file_list(str(source[0]), base_dir, True, True):
+            w.write(f)
+            w.write("\n")
     return None
 
 
