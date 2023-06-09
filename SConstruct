@@ -44,7 +44,7 @@ if sys.platform.startswith("linux"):
     default_platform = "linux"
 elif sys.platform == "darwin":
     default_platform = "macos"
-elif sys.platform == "win32" or sys.platform == "msys":
+elif sys.platform in ["win32", "msys", "cygwin"]:
     default_platform = "windows"
 elif ARGUMENTS.get("platform", ""):
     default_platform = ARGUMENTS.get("platform")
@@ -54,6 +54,14 @@ else:
 # Default tools with no platform defaults to gnu toolchain.
 # We apply platform specific toolchains via our custom tools.
 env = Environment(tools=["default"], PLATFORM="")
+
+# We let SCons build its default ENV as it includes OS-specific things which we don't
+# want to have to pull in manually.
+# Then we prepend PATH to make it take precedence, while preserving SCons' own entries.
+env.PrependENVPath("PATH", os.getenv("PATH"))
+env.PrependENVPath("PKG_CONFIG_PATH", os.getenv("PKG_CONFIG_PATH"))
+if "TEMP" in os.environ:  # Needed on Windows by MinGW.
+    env["ENV"]["TEMP"] = os.environ["TEMP"]
 
 # Default num_jobs to local cpu count if not user specified.
 # SCons has a peculiarity where user-specified options won't be overridden

@@ -1,14 +1,16 @@
 import sys
 
-import my_spawn
+import long_line_fix
 
 from SCons.Tool import msvc, mingw
 from SCons.Variables import *
 
+is_windows = sys.platform in ["win32", "msys"]
 
 def options(opts):
     opts.Add(BoolVariable("use_mingw", "Use the MinGW compiler instead of MSVC - only effective on Windows", False))
     opts.Add(BoolVariable("use_clang_cl", "Use the clang driver instead of MSVC - only effective on Windows", False))
+    opts.Add(BoolVariable("mingw_autodetect", "Let SCons try to autodectect and configure mingw - only effective on windows", is_windows))
 
 
 def exists(env):
@@ -37,7 +39,7 @@ def generate(env):
             env["CC"] = "clang-cl"
             env["CXX"] = "clang-cl"
 
-    elif sys.platform == "win32" or sys.platform == "msys":
+    elif is_windows and env["mingw_autodetect"]:
         env["use_mingw"] = True
         mingw.generate(env)
         # Don't want lib prefixes
@@ -46,7 +48,8 @@ def generate(env):
         # Want dll suffix
         env["SHLIBSUFFIX"] = ".dll"
         # Long line hack. Use custom spawn, quick AR append (to avoid files with the same names to override each other).
-        my_spawn.configure(env)
+        if long_line_fix.exists(env):
+            my_spawn.configure(env)
 
     else:
         env["use_mingw"] = True
@@ -54,8 +57,8 @@ def generate(env):
         prefix = "i686" if env["arch"] == "x86_32" else env["arch"]
         env["CXX"] = prefix + "-w64-mingw32-g++"
         env["CC"] = prefix + "-w64-mingw32-gcc"
-        env["AR"] = prefix + "-w64-mingw32-ar"
-        env["RANLIB"] = prefix + "-w64-mingw32-ranlib"
+        env["AR"] = prefix + "-w64-mingw32-gcc-ar"
+        env["RANLIB"] = prefix + "-w64-mingw32-gcc-ranlib"
         env["LINK"] = prefix + "-w64-mingw32-g++"
         # Want dll suffix
         env["SHLIBSUFFIX"] = ".dll"
@@ -70,3 +73,6 @@ def generate(env):
                 "-static-libstdc++",
             ]
         )
+
+        if long_line_fix.exists(env):
+            long_line_fix.generate(env)
