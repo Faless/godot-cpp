@@ -7,10 +7,17 @@ from SCons.Variables import *
 
 is_windows = sys.platform in ["win32", "msys"]
 
+
 def options(opts):
     opts.Add(BoolVariable("use_mingw", "Use the MinGW compiler instead of MSVC - only effective on Windows", False))
     opts.Add(BoolVariable("use_clang_cl", "Use the clang driver instead of MSVC - only effective on Windows", False))
-    opts.Add(BoolVariable("mingw_autodetect", "Let SCons try to autodectect and configure mingw - only effective on windows", is_windows))
+    opts.Add(
+        BoolVariable(
+            "mingw_autodetect",
+            "Let SCons try to autodectect and configure mingw - only effective on windows",
+            is_windows,
+        )
+    )
 
 
 def exists(env):
