@@ -5,19 +5,13 @@ import long_line_fix
 from SCons.Tool import msvc, mingw
 from SCons.Variables import *
 
-is_windows = sys.platform in ["win32", "msys"]
+
+is_windows = sys.platform in ["win32", "msys", "cygwin"]
 
 
 def options(opts):
     opts.Add(BoolVariable("use_mingw", "Use the MinGW compiler instead of MSVC - only effective on Windows", False))
     opts.Add(BoolVariable("use_clang_cl", "Use the clang driver instead of MSVC - only effective on Windows", False))
-    opts.Add(
-        BoolVariable(
-            "mingw_autodetect",
-            "Let SCons try to autodectect and configure mingw - only effective on windows",
-            is_windows,
-        )
-    )
 
 
 def exists(env):
@@ -26,7 +20,7 @@ def exists(env):
 
 def generate(env):
     base = None
-    if not env["use_mingw"] and msvc.exists(env):
+    if is_windows and not env["use_mingw"] and msvc.exists(env):
         if env["arch"] == "x86_64":
             env["TARGET_ARCH"] = "amd64"
         elif env["arch"] == "x86_32":
@@ -46,21 +40,10 @@ def generate(env):
             env["CC"] = "clang-cl"
             env["CXX"] = "clang-cl"
 
-    elif is_windows and env["mingw_autodetect"]:
-        env["use_mingw"] = True
-        mingw.generate(env)
-        # Don't want lib prefixes
-        env["IMPLIBPREFIX"] = ""
-        env["SHLIBPREFIX"] = ""
-        # Want dll suffix
-        env["SHLIBSUFFIX"] = ".dll"
-        # Long line hack. Use custom spawn, quick AR append (to avoid files with the same names to override each other).
-        if long_line_fix.exists(env):
-            long_line_fix.configure(env)
-
     else:
-        env["use_mingw"] = True
         # Cross-compilation using MinGW
+        env["use_mingw"] = True
+
         prefix = "i686" if env["arch"] == "x86_32" else env["arch"]
         env["CXX"] = prefix + "-w64-mingw32-g++"
         env["CC"] = prefix + "-w64-mingw32-gcc"
@@ -81,5 +64,10 @@ def generate(env):
             ]
         )
 
+        if is_windows and "TEMP" in os.environ:  # Needed by at least MSYS2-MinGW.
+            env["ENV"]["TEMP"] = os.environ["TEMP"]
+
+        # Long line hack on Windows.
+        # Use custom spawn, quick AR append (to avoid files with the same names to override each other).
         if long_line_fix.exists(env):
             long_line_fix.generate(env)

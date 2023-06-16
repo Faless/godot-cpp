@@ -1,4 +1,4 @@
-import os, sys
+import os, sys, subprocess
 
 from SCons.Platform import TempFileMunge
 
@@ -7,28 +7,13 @@ def exists(env):
     return os.name == "nt" or sys.platform == "cygwin"
 
 
-# Workaround for long command lines on Windows. See:
-# http://www.scons.org/wiki/LongCmdLinesOnWin32
 def generate(env):
     if env.get("is_msvc", False):
         # Applied by MSVC tool.
         return
 
-    if os.name == "nt":
-        _custom_spawn(env)
-    elif sys.platform == "cygwin":
-        # Long line hack. Use tempfile for ar on cywin.
-        _custom_arcom(env)
-
-
-def _custom_arcom(env):
-    env["TEMPFILE"] = TempFileMunge
-    env["ARCOM"] = "${TEMPFILE('\"$AR\" $ARFLAGS $TARGET $SOURCES')}"
-
-
-def _custom_spawn(env):
-    import subprocess
-
+    # Workaround for long command lines on Windows. See:
+    # http://www.scons.org/wiki/LongCmdLinesOnWin32
     def mySubProcess(cmdline, env):
         # print "SPAWNED : " + cmdline
         startupinfo = subprocess.STARTUPINFO()
@@ -39,7 +24,7 @@ def _custom_spawn(env):
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             startupinfo=startupinfo,
-            shell=False,
+            shell=os.name != "nt",  # Needed when os is posix (windows + cygwin/msys2).
             env=env,
         )
         data, err = proc.communicate()

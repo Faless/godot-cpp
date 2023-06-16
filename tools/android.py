@@ -31,6 +31,9 @@ def generate(env):
         print("Only arm64, x86_64, arm32, and x86_32 are supported on Android. Exiting.")
         Exit()
 
+    if long_line_fix.exists(env):
+        long_line_fix.generate(env)
+
     # Validate API level
     api_level = int(env["android_api_level"])
     if "64" in env["arch"] and api_level < 21:
@@ -41,8 +44,6 @@ def generate(env):
     # Setup toolchain
     toolchain = env["ANDROID_NDK_ROOT"] + "/toolchains/llvm/prebuilt/"
     if sys.platform in ["win32", "msys", "cygwin"]:
-        if long_line_fix.exists(env):
-            long_line_fix.generate(env)
         toolchain += "windows"
         import platform as pltfm
 
