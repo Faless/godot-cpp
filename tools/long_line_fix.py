@@ -16,15 +16,21 @@ def generate(env):
     # http://www.scons.org/wiki/LongCmdLinesOnWin32
     def mySubProcess(cmdline, env):
         # print "SPAWNED : " + cmdline
-        startupinfo = subprocess.STARTUPINFO()
-        startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+        if os.name == "nt":
+            shell = False
+            startupinfo = subprocess.STARTUPINFO()
+            startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+        else:
+            shell = True  # Needed when os is posix (windows + cygwin/msys2).
+            startupinfo = None
+
         proc = subprocess.Popen(
             cmdline,
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             startupinfo=startupinfo,
-            shell=os.name != "nt",  # Needed when os is posix (windows + cygwin/msys2).
+            shell=shell,
             env=env,
         )
         data, err = proc.communicate()
