@@ -56,7 +56,7 @@ def generate(env):
         env["SHLIBSUFFIX"] = ".dll"
         # Long line hack. Use custom spawn, quick AR append (to avoid files with the same names to override each other).
         if long_line_fix.exists(env):
-            my_spawn.configure(env)
+            long_line_fix.configure(env)
 
     else:
         env["use_mingw"] = True
