@@ -31,13 +31,17 @@ def find_mingw_tool(cmd, prefixes=[], required=True):
             continue
         return prefix + cmd
     if required:
-        raise RuntimeError("Unable to find required mingw tool '%s'. Looked at: %s" % (cmd, [p + cmd for p in prefixes]))
+        raise RuntimeError(
+            "Unable to find required mingw tool '%s'. Looked at: %s" % (cmd, [p + cmd for p in prefixes])
+        )
     return None
 
 
 def options(opts):
     opts.Add(BoolVariable("use_mingw", "Use the MinGW gcc compiler instead of MSVC - only effective on Windows", False))
-    opts.Add(BoolVariable("use_mingw_llvm", "Use the MinGW llvm compiler instead of MSVC - only effective on Windows", False))
+    opts.Add(
+        BoolVariable("use_mingw_llvm", "Use the MinGW llvm compiler instead of MSVC - only effective on Windows", False)
+    )
     opts.Add(BoolVariable("use_clang_cl", "Use the clang driver instead of MSVC - only effective on Windows", False))
 
 
