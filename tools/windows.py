@@ -1,4 +1,4 @@
-import sys, subprocess
+import os, sys, subprocess
 
 import win32_long_line_fix
 
