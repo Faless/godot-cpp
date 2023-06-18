@@ -90,22 +90,21 @@ def generate(env):
             "arm64": "aarch64-w64-mingw32-",
         }
 
-        prefix = mingw_arch_triples.get(env["arch"], "")
-        compiler_prefixes = [prefix]
+        triple = mingw_arch_triples.get(env["arch"], "")
+        compiler_prefixes = [triple]
         if env["use_mingw_llvm"]:
-            tool_prefixes = [prefix + "llvm-"] + compiler_prefixes
+            tool_prefixes = [triple + "llvm-"] + compiler_prefixes
             env["CC"] = find_mingw_tool("clang", compiler_prefixes)
             env["CXX"] = find_mingw_tool("clang++", compiler_prefixes)
         else:
-            tool_prefixes = [prefix + "gcc-"] + compiler_prefixes
+            tool_prefixes = [triple + "gcc-"] + compiler_prefixes
             env["CC"] = find_mingw_tool("gcc", compiler_prefixes)
             env["CXX"] = find_mingw_tool("g++", compiler_prefixes)
 
-        env["AR"] = find_mingw_tool("ar", tool_prefixes)
-        env["AS"] = find_mingw_tool("as", tool_prefixes)
-        env["RC"] = find_mingw_tool("windres", tool_prefixes)
-        env["RANLIB"] = find_mingw_tool("ranlib", tool_prefixes)
         env["LINK"] = env["CXX"]
+        env["AR"] = find_mingw_tool("ar", tool_prefixes)
+        env["RANLIB"] = find_mingw_tool("ranlib", tool_prefixes)
+        env["AS"] = find_mingw_tool("as", tool_prefixes, required=False)  # Not necessary in most cases.
 
         env["SHLIBSUFFIX"] = ".dll"
         env.Append(CCFLAGS=["-Wwrite-strings"])
