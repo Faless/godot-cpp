@@ -1,9 +1,9 @@
 import sys, subprocess
 
-import long_line_fix
+import win32_long_line_fix
 
 from SCons.Tool import msvc
-from SCons.Variables import *
+from SCons.Variables import BoolVariable
 
 
 is_windows = sys.platform in ["win32", "msys", "cygwin"]
@@ -25,16 +25,21 @@ def try_cmd(test):
     return False
 
 
+def get_compiler_target(cmd):
+    try:
+        return subprocess.check_output(cmd + " -dumpmachine", text=True, shell=True).strip()
+    except subprocess.CalledProcessError as e:
+        pass
+    return ""
+
+
 def find_mingw_tool(cmd, prefixes=[], required=True):
     for prefix in prefixes:
         if not try_cmd(prefix + cmd + " --version"):
             continue
         return prefix + cmd
-    if required:
-        raise RuntimeError(
-            "Unable to find required mingw tool '%s'. Looked at: %s" % (cmd, [p + cmd for p in prefixes])
-        )
-    return None
+    print("Unable to find required mingw tool '%s'. Tried: %s" % (cmd, [p + cmd for p in prefixes]))
+    return cmd
 
 
 def options(opts):
@@ -87,15 +92,16 @@ def generate(env):
         # Cross-compilation using MinGW
         env["use_mingw"] = True
 
-        mingw_arch_triples = {
-            "x86_64": "x86_64-w64-mingw32-",
-            "x86_32": "i686-w64-mingw32-",
-            "arm32": "armv7-w64-mingw32-",
-            "arm64": "aarch64-w64-mingw32-",
+        mingw_archs = {
+            "x86_64": "x86_64",
+            "x86_32": "i686",
+            "arm32": "armv7",
+            "arm64": "aarch64",
         }
 
-        triple = mingw_arch_triples.get(env["arch"], "")
-        compiler_prefixes = [triple]
+        mingw_arch = mingw_archs.get(env["arch"], env["arch"])
+        triple = mingw_arch + "-w64-mingw32-"
+        compiler_prefixes = [triple, ""]
         if env["use_mingw_llvm"]:
             tool_prefixes = [triple + "llvm-"] + compiler_prefixes
             env["CC"] = find_mingw_tool("clang", compiler_prefixes)
@@ -108,7 +114,15 @@ def generate(env):
         env["LINK"] = env["CXX"]
         env["AR"] = find_mingw_tool("ar", tool_prefixes)
         env["RANLIB"] = find_mingw_tool("ranlib", tool_prefixes)
-        env["AS"] = find_mingw_tool("as", tool_prefixes, required=False)  # Not necessary in most cases.
+        env["AS"] = find_mingw_tool("as", tool_prefixes)
+        # We could also add the RC action but it's rarely needed by libraries, so let's keep this simple.
+        env["RC"] = find_mingw_tool("windres", tool_prefixes)
+
+        # Check compiler target.
+        known_targets = [mingw_arch + "-w64-mingw32", mingw_arch + "-w64-windows-gnu"]
+        compiler_target = get_compiler_target(env["CXX"])
+        if compiler_target not in known_targets:
+            print("WARNING: Unknown compiler target: %s.\nExpected any of: %s.\nThe resulting binary may be invalid." % (compiler_target, known_targets))
 
         env["SHLIBSUFFIX"] = ".dll"
         env.Append(CCFLAGS=["-Wwrite-strings"])
@@ -121,10 +135,11 @@ def generate(env):
             ]
         )
 
-        if is_windows and "TEMP" in os.environ:  # Needed by at least MSYS2-MinGW.
+        # Needed by at least MSYS2-MinGW.
+        if is_windows and "TEMP" in os.environ:
             env["ENV"]["TEMP"] = os.environ["TEMP"]
 
         # Long line hack on Windows.
         # Use custom spawn, quick AR append (to avoid files with the same names to override each other).
-        if long_line_fix.exists(env):
-            long_line_fix.generate(env)
+        if win32_long_line_fix.exists(env):
+            win32_long_line_fix.generate(env)

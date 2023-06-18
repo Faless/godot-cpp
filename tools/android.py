@@ -1,6 +1,6 @@
 import os
 import sys
-import long_line_fix
+import win32_long_line_fix
 from SCons.Script import ARGUMENTS
 
 
@@ -31,8 +31,8 @@ def generate(env):
         print("Only arm64, x86_64, arm32, and x86_32 are supported on Android. Exiting.")
         Exit()
 
-    if long_line_fix.exists(env):
-        long_line_fix.generate(env)
+    if win32_long_line_fix.exists(env):
+        win32_long_line_fix.generate(env)
 
     # Validate API level
     api_level = int(env["android_api_level"])
