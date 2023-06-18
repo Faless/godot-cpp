@@ -25,12 +25,14 @@ def try_cmd(test):
     return False
 
 
-def find_mingw_tool(cmd, prefixes=[]):
+def find_mingw_tool(cmd, prefixes=[], required=True):
     for prefix in prefixes:
         if not try_cmd(prefix + cmd + " --version"):
             continue
         return prefix + cmd
-    return cmd
+    if required:
+        raise RuntimeError("Unable to find required mingw tool '%s'. Looked at: %s" % (cmd, [p + cmd for p in prefixes]))
+    return None
 
 
 def options(opts):
@@ -89,24 +91,21 @@ def generate(env):
         }
 
         prefix = mingw_arch_triples.get(env["arch"], "")
+        compiler_prefixes = [prefix]
         if env["use_mingw_llvm"]:
-            tool_prefixes = [prefix + "llvm-", prefix]
-            env["CC"] = prefix + "clang"
-            env["CXX"] = prefix + "clang++"
-            env["AR"] = find_mingw_tool("ar", tool_prefixes)
-            env["AS"] = find_mingw_tool("as", tool_prefixes)
-            env["RC"] = find_mingw_tool("windres", tool_prefixes)
-            env["RANLIB"] = find_mingw_tool("ranlib", tool_prefixes)
-            env["LINK"] = prefix + "clang++"
+            tool_prefixes = [prefix + "llvm-"] + compiler_prefixes
+            env["CC"] = find_mingw_tool("clang", compiler_prefixes)
+            env["CXX"] = find_mingw_tool("clang++", compiler_prefixes)
         else:
-            tool_prefixes = [prefix + "gcc-", prefix]
-            env["CC"] = prefix + "gcc"
-            env["CXX"] = prefix + "g++"
-            env["AR"] = find_mingw_tool("ar", tool_prefixes)
-            env["AS"] = find_mingw_tool("as", tool_prefixes)
-            env["RC"] = find_mingw_tool("windres", tool_prefixes)
-            env["RANLIB"] = find_mingw_tool("ranlib", tool_prefixes)
-            env["LINK"] = prefix + "g++"
+            tool_prefixes = [prefix + "gcc-"] + compiler_prefixes
+            env["CC"] = find_mingw_tool("gcc", compiler_prefixes)
+            env["CXX"] = find_mingw_tool("g++", compiler_prefixes)
+
+        env["AR"] = find_mingw_tool("ar", tool_prefixes)
+        env["AS"] = find_mingw_tool("as", tool_prefixes)
+        env["RC"] = find_mingw_tool("windres", tool_prefixes)
+        env["RANLIB"] = find_mingw_tool("ranlib", tool_prefixes)
+        env["LINK"] = env["CXX"]
 
         env["SHLIBSUFFIX"] = ".dll"
         env.Append(CCFLAGS=["-Wwrite-strings"])
