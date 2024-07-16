@@ -2,7 +2,7 @@ import sys
 import my_spawn
 import common_compiler_flags
 from SCons.Tool import msvc, mingw
-from SCons.Variables import *
+from SCons.Variables import BoolVariable
 
 
 def options(opts):
